@@ -1,15 +1,68 @@
-Relative Stability: Anchored or Pegged to the US Dollar
+# DeFi Stablecoin Engine
 
-Chainlink Pricefeed
+A minimal, collateral-backed stablecoin system built with Foundry and Solidity.
 
-Function to convert ETH & BTC to USD
+## Overview
 
-Stability Mechanism (Minting/Burning): Algorithmicly Decentralized
+**Relative Stability:** Anchored to the US Dollar
 
-Users may only mint the stablecoin with enough collateral
+**Stability Mechanism:** Algorithmic, Decentralized Minting/Burning
 
-Collateral: Exogenous (Crypto)
+**Collateral Requirements:** Users may only mint the stablecoin with sufficient exogenous crypto collateral.
 
-wETH
+**Supported Collateral:**
+- wETH (Wrapped Ethereum)
+- wBTC (Wrapped Bitcoin)
 
-wBTC
+**Price Feeds:** Chainlink Oracle feeds for ETH/BTC to USD conversion
+
+## Key Features
+
+- Collateral deposit and withdrawal
+- Mint/burn DSC (DecentralizedStableCoin) based on collateral ratio
+- Real-time USD valuation via Chainlink price feeds
+- Revert checks for invalid collateral and unsupported tokens
+- Full unit test coverage (6 tests passing)
+
+## Project Structure
+
+```
+src/
+├── DecentralizedStableCoin.sol    # ERC20 token contract
+└── DSCEngine.sol                  # Core minting/burning logic
+
+test/
+├── unit/
+│   └── DSCEngineTest.t.sol        # Unit tests
+└── mocks/
+    ├── ERC20Mock.sol
+    └── MockV3Aggregator.sol
+```
+
+## Running Tests
+
+```bash
+cd DeFi-Stablecoin/DefiApp
+forge test
+```
+
+**Test Results (2026-01-04):**
+- ✅ 6 tests passing; 0 failed
+  - `testCanDepositCollateralAndGetAccountInfo()`
+  - `testGetTokenAmountFromUsd()`
+  - `testGetUsdValue()`
+  - `testRevertsIfCollateralZero()`
+  - `testRevertsIfTokenLengthDoesntMatchPriceFeedLength()`
+  - `testRevertsWithUnapprovedCollateral()`
+
+## Dependencies
+
+- Foundry (forge, cast, anvil)
+- OpenZeppelin Contracts
+- Chainlink Brownie Contracts
+
+## Development
+
+Built with Solidity 0.8.x and tested with Foundry test framework.
+
+See [SUMMARY.md](SUMMARY.md) and [CHANGELOG.md](CHANGELOG.md) for more details.
