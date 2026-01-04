@@ -20,7 +20,13 @@ forge test
 ```
 
 Test snapshot (run on 2026-01-04):
-- 2 tests passed; 0 failed; 0 skipped
+- 6 tests passed; 0 failed; 0 skipped
+  - `testCanDepositCollateralAndGetAccountInfo()`
+  - `testGetTokenAmountFromUsd()`
+  - `testGetUsdValue()`
+  - `testRevertsIfCollateralZero()`
+  - `testRevertsIfTokenLengthDoesntMatchPriceFeedLength()`
+  - `testRevertsWithUnapprovedCollateral()`
 
 Notes:
 - Collateral types: wETH, wBTC (as noted in README)

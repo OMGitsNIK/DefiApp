@@ -1,8 +1,10 @@
 # Changelog
 
-## 2026-01-04 — Wrap-up
-- Add `SUMMARY.md` and `CHANGELOG.md` summarizing repository state and test results.
-- Tests executed: 2 passed, 0 failed, 0 skipped (see `SUMMARY.md` for snapshot).
+## 2026-01-04 — Wrap-up (Updated)
+- Test suite expanded: 6 tests now passing (was 2).
+- New tests: collateral deposit, token amount conversion, token/pricefeed validation, unapproved collateral checks.
+- Tests executed: 6 passed, 0 failed, 0 skipped (see `SUMMARY.md` for snapshot).
 
 Notes:
-- No API or contract changes were made; this is documentation-only.
+- No breaking changes; all new tests pass.
+- Ready for further development or deployment.
