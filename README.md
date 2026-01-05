@@ -49,7 +49,6 @@ forge script script/DeployDSC.s.sol
 ## Running Tests
 
 ```bash
-cd DeFi-Stablecoin/DefiApp
 forge test
 ```
 
