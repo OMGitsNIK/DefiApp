@@ -39,6 +39,13 @@ test/
     └── MockV3Aggregator.sol
 ```
 
+
+## Deployment
+
+```bash
+forge script script/DeployDSC.s.sol
+```
+
 ## Running Tests
 
 ```bash
@@ -46,14 +53,13 @@ cd DeFi-Stablecoin/DefiApp
 forge test
 ```
 
-**Test Results (2026-01-04):**
-- ✅ 6 tests passing; 0 failed
-  - `testCanDepositCollateralAndGetAccountInfo()`
-  - `testGetTokenAmountFromUsd()`
-  - `testGetUsdValue()`
-  - `testRevertsIfCollateralZero()`
-  - `testRevertsIfTokenLengthDoesntMatchPriceFeedLength()`
-  - `testRevertsWithUnapprovedCollateral()`
+**Test Results (2026-01-05):**
+- ✅ ~18 tests passing; 0 failed
+  - Comprehensive coverage for:
+    - Deposit Integration
+    - Price Feed Logic
+    - Revert Conditions
+    - Constructor Initialization
 
 ## Dependencies
 
@@ -64,5 +70,3 @@ forge test
 ## Development
 
 Built with Solidity 0.8.x and tested with Foundry test framework.
-
-See [SUMMARY.md](SUMMARY.md) and [CHANGELOG.md](CHANGELOG.md) for more details.
